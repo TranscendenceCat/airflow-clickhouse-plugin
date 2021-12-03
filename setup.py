@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import pathlib
-from setuptools import setup, find_packages
+from setuptools import find_namespace_packages, setup
 
 import airflow_clickhouse_plugin.__version__ as about
 
@@ -23,7 +23,10 @@ setup(
     author=about.__author__,
     author_email=about.__author_email__,
     url=about.__url__,
-    packages=find_packages(exclude=('tests', 'tests.*')),
+    packages=find_namespace_packages(
+            include=['airflow.providers.clickhouse', 'airflow.providers.clickhouse.*'],
+            exclude=('tests', 'tests.*')
+    ),
     include_package_data=True,
     python_requires=">=3.6.*",
     install_requires=install_requires,
