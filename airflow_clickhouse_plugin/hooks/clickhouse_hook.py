@@ -8,6 +8,8 @@ from clickhouse_driver import Client
 class ClickHouseHook(BaseHook):
     conn_name_attr = 'clickhouse_conn_id'
     default_conn_name = 'clickhouse_default'
+    conn_type = 'clickhouse'
+    hook_name = 'Clickhouse'
 
     def __init__(
             self,
