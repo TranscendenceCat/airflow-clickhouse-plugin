@@ -1,8 +1,8 @@
 import unittest
 from unittest import mock
 
-from airflow_clickhouse_plugin.hooks.clickhouse_hook import ClickHouseHook
-from airflow_clickhouse_plugin.operators.clickhouse_operator import ClickHouseOperator
+from airflow.providers.clickhouse.hooks import ClickHouseHook
+from airflow.providers.clickhouse.operators import ClickHouseOperator
 
 
 class ClickHouseOperatorTestCase(unittest.TestCase):

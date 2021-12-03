@@ -161,7 +161,7 @@ By default, the plugin uses `connection_id='clickhouse_default'`.
 
 ```python
 from airflow import DAG
-from airflow_clickhouse_plugin.operators.clickhouse_operator import ClickHouseOperator
+from airflow.providers.clickhouse.operators import ClickHouseOperator
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
 
@@ -193,8 +193,8 @@ with DAG(
         task_id='print_month_income',
         provide_context=True,
         python_callable=lambda task_instance, **_:
-            # pulling XCom value and printing it
-            print(task_instance.xcom_pull(task_ids='update_income_aggregate')),
+        # pulling XCom value and printing it
+        print(task_instance.xcom_pull(task_ids='update_income_aggregate')),
     )
 ```
 
@@ -202,7 +202,7 @@ with DAG(
 
 ```python
 from airflow import DAG
-from airflow_clickhouse_plugin.hooks.clickhouse_hook import ClickHouseHook
+from airflow.providers.clickhouse.hooks import ClickHouseHook
 from airflow.hooks.mysql_hook import MySqlHook
 from airflow.operators.python_operator import PythonOperator
 from airflow.utils.dates import days_ago
@@ -235,10 +235,9 @@ Important note: don't try to insert values using
 
 ```python
 from airflow import DAG
-from airflow_clickhouse_plugin.sensors.clickhouse_sql_sensor import ClickHouseSqlSensor
-from airflow_clickhouse_plugin.operators.clickhouse_operator import ClickHouseOperator
+from airflow.providers.clickhouse.sensors.clickhouse_sql_sensor import ClickHouseSqlSensor
+from airflow.providers.clickhouse.operators import ClickHouseOperator
 from airflow.utils.dates import days_ago
-
 
 with DAG(
         dag_id='listen_warnings',

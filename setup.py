@@ -3,7 +3,7 @@
 import pathlib
 from setuptools import find_namespace_packages, setup
 
-import airflow_clickhouse_plugin.__version__ as about
+import airflow.providers.clickhouse.__version__ as about
 
 here = pathlib.Path(__file__).parent.absolute()
 with open(here / 'README.md') as readme_file:
@@ -25,7 +25,7 @@ setup(
     url=about.__url__,
     packages=find_namespace_packages(
             include=['airflow.providers.clickhouse', 'airflow.providers.clickhouse.*'],
-            exclude=('tests', 'tests.*')
+            exclude=['tests', 'tests.*']
     ),
     include_package_data=True,
     python_requires=">=3.6.*",

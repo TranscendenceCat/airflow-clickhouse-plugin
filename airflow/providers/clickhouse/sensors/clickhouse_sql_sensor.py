@@ -2,7 +2,7 @@ from typing import Dict, Callable, Any, Optional
 
 from airflow.sensors.sql import SqlSensor
 from airflow.utils.decorators import apply_defaults
-from airflow_clickhouse_plugin.hooks.clickhouse_hook import ClickHouseHook
+from airflow.providers.clickhouse.hooks import ClickHouseHook
 
 
 class ClickHouseSqlSensor(SqlSensor):

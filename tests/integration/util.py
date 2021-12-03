@@ -1,7 +1,7 @@
 import os
 import unittest
 
-from airflow_clickhouse_plugin.hooks.clickhouse_hook import ClickHouseHook
+from airflow.providers.clickhouse.hooks import ClickHouseHook
 
 
 class ClickHouseConnectionEnvVarTestCase(unittest.TestCase):

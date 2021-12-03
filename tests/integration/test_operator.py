@@ -1,6 +1,6 @@
 import unittest
 
-from airflow_clickhouse_plugin.operators.clickhouse_operator import ClickHouseOperator
+from airflow.providers.clickhouse.operators import ClickHouseOperator
 
 
 class BasicTestCase(unittest.TestCase):

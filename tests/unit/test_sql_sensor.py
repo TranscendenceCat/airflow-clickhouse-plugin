@@ -3,7 +3,7 @@ from unittest import mock
 
 from airflow.exceptions import AirflowException
 
-from airflow_clickhouse_plugin.sensors.clickhouse_sql_sensor import ClickHouseSqlSensor
+from airflow.providers.clickhouse.sensors.clickhouse_sql_sensor import ClickHouseSqlSensor
 
 
 class ClickHouseSqlSensorTestCase(unittest.TestCase):

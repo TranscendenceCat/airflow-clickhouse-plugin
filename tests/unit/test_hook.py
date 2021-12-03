@@ -5,7 +5,7 @@ from unittest import TestCase, mock
 import airflow.models
 import clickhouse_driver
 
-from airflow_clickhouse_plugin.hooks.clickhouse_hook import ClickHouseHook
+from airflow.providers.clickhouse.hooks import ClickHouseHook
 
 
 class ClickHouseConnectionParamsTestCase(TestCase):
