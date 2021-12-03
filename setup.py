@@ -24,12 +24,12 @@ setup(
     author_email=about.__author_email__,
     url=about.__url__,
     packages=find_namespace_packages(
-            include=['airflow.providers.clickhouse', 'airflow.providers.clickhouse.*'],
-            exclude=['tests', 'tests.*']
+            include=['airflow.providers.clickhouse', 'airflow.providers.clickhouse.*']
     ),
     include_package_data=True,
     python_requires=">=3.6.*",
     install_requires=install_requires,
+    setup_requires=['setuptools'],
     extras_require={
         'pandas': ['apache-airflow[pandas]>=2.0.0,<2.3.0'],
     },
