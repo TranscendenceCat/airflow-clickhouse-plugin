@@ -1,6 +1,6 @@
 def get_provider_info():
     return {
-        'package-name': 'airflow-clickhouse-plugin',
+        'package-name': 'apache-airflow-providers-clickhouse',
         'name': 'Clickhouse',
         'description': '`Clickhouse <https://clickhouse.com/>`__\n',
         'versions': ['0.8.0'],
@@ -8,7 +8,7 @@ def get_provider_info():
         'integrations': [
             {
                 'integration-name': 'Clickhouse',
-                'external-doc-url': 'https://github.com/whisklabs/airflow-clickhouse-plugin',
+                'external-doc-url': 'https://github.com/TranscendenceCat/apache-airflow-providers-clickhouse',
                 'how-to-guide': [''],
                 'logo': '',
                 'tags': ['service'],
