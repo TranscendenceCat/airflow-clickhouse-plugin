@@ -3,7 +3,7 @@ from typing import *
 from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
 
-from airflow.providers.clickhouse.hooks import ClickHouseHook
+from airflow.providers.clickhouse.hooks.clickhouse import ClickHouseHook
 
 
 class ClickHouseOperator(BaseOperator):

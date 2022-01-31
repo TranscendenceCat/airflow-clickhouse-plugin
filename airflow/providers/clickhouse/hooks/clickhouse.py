@@ -4,6 +4,8 @@ from typing import *
 from airflow.hooks.base import BaseHook
 from clickhouse_driver import Client
 
+import pandas as pd
+
 
 class ClickHouseHook(BaseHook):
     conn_name_attr = 'clickhouse_conn_id'
@@ -48,7 +50,6 @@ class ClickHouseHook(BaseHook):
                 return None
 
     def get_pandas_df(self, sql: str):
-        import pandas as pd
         rows, columns_defs = self.run(sql, with_column_types=True)
         columns = [column_name for column_name, _ in columns_defs]
         return pd.DataFrame(rows, columns=columns)
